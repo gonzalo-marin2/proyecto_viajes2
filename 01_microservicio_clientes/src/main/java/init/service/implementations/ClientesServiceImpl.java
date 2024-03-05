@@ -19,12 +19,12 @@ public class ClientesServiceImpl implements ClientesService {
 	}
 
 	@Override
-	public Cliente altaUsuario(Cliente cliente) {
+	public boolean altaUsuario(Cliente cliente) {
 		if(clientesDao.findByUsuario(cliente.getUsuario())==null) {
 			clientesDao.save(cliente);
-			return cliente;
+			return true;
 		}
-		return null;
+		return false;
 	}
 
 }
