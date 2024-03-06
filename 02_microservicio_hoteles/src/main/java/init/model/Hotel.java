@@ -17,10 +17,10 @@ import lombok.NoArgsConstructor;
 public class Hotel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idHotel;
 	private String nombre;
 	private int categoria;
 	private double precio;
-	private boolean disponibilidad;
+	private boolean disponible;
 	private String localizacion;
 }

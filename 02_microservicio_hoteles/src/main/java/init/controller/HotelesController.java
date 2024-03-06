@@ -24,13 +24,21 @@ public class HotelesController {
 	@Autowired
 	HotelesDao hotelesDao;
 	
-	@GetMapping(value="id/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Hotel> buscarPorId(@PathVariable("id") int id){
-			return new ResponseEntity<>(service.buscarPorId(id),HttpStatus.OK);
+	@GetMapping(value="id/{idHotel}",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Hotel> buscarPorId(@PathVariable("idHotel") int idHotel){
+		Hotel hotel=service.buscarPorId(idHotel);
+		if(hotel!=null) {
+			return new ResponseEntity<>(hotel,HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.CONFLICT);	
 	}
 	
 	@GetMapping(value="localizacion/{localizacion}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Hotel>> buscarPorLocalizacion(@PathVariable("localizacion") String localizacion){
-		return new ResponseEntity<>(service.buscarPorLocalizacion(localizacion),HttpStatus.OK);
+		List<Hotel> hoteles=service.buscarPorLocalizacion(localizacion);
+		if(hoteles!=null) {
+			return new ResponseEntity<>(hoteles,HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.CONFLICT);
 	}
 }
