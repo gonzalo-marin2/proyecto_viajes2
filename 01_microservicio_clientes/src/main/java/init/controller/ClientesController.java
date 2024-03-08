@@ -24,11 +24,12 @@ public class ClientesController {
 	
 	@GetMapping(value="login/{usuario}/{password}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Cliente> autenticarUsuario(@PathVariable("usuario") String usuario,@PathVariable("password") String password){
-		Cliente cliente=service.autenticarUsuario(usuario, password);
+		return new ResponseEntity<>(service.autenticarUsuario(usuario, password),HttpStatus.OK);
+		/*Cliente cliente=service.autenticarUsuario(usuario, password);
 			if(cliente==null) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
-			return new ResponseEntity<>(cliente,HttpStatus.OK);
+			return new ResponseEntity<>(cliente,HttpStatus.OK);*/
 		}
 	
 	@PostMapping(value="registro",produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
