@@ -2,6 +2,12 @@ package init.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@Data
 public class ReservaDto {
 	private int idReserva;
 	private String usuario;

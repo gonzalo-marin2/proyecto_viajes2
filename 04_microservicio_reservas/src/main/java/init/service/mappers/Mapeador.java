@@ -51,21 +51,19 @@ public class Mapeador {
 				hotel.getLocalizacion());
 	}
 	
-	/*public Reserva dtoToReserva(ReservaDto reserva) {
+	public Reserva dtoToReserva(ReservaDto reserva) {
 		return new Reserva(reserva.getIdReserva(),
 				reserva.getUsuario(),
 				dtoToVuelo(reserva.getVueloDto()),
 				dtoToHotel(reserva.getHotelDto()),
 				reserva.getPrecio());
-	}*/
+	}
 
-
-	
-	/*public ReservaDto reservaToDto(Reserva reserva) {
+	public ReservaDto reservaToDto(Reserva reserva) {
 		return new ReservaDto(reserva.getIdReserva(),
 				reserva.getUsuario(),
 				vueloToDto(reserva.getVuelo()),
 				hotelToDto(reserva.getHotel()),
 				reserva.getPrecio());
-	}*/
+	}
 }
