@@ -22,7 +22,7 @@ public class ClientesController {
 	@Autowired
 	ClientesDao clientesDao;
 	
-	@GetMapping(value="acceso/{usuario}/{password}",produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="login/{usuario}/{password}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Cliente> autenticarUsuario(@PathVariable("usuario") String usuario,@PathVariable("password") String password){
 		Cliente cliente=service.autenticarUsuario(usuario, password);
 			if(cliente==null) {
